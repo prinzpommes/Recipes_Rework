@@ -1,0 +1,13 @@
+#################################################################
+#via this config you can enable "nether"-Features. This is for  #
+#people who like to disable the nether!                         #
+#################################################################
+netherrack: true
+netherbrick: true
+glowstone: true
+soulsand: true
+blazerod: true
+netherstar: true
+netherwartseed: true
+message:
+ privatejoinmessage: Welcome to Test online%
