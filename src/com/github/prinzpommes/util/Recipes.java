@@ -19,12 +19,6 @@ public class Recipes {
 
 	private void registerRecipes() {
 
-		ShapedRecipe sr = new ShapedRecipe(new ItemStack(
-				Material.ENCHANTMENT_TABLE, 1));
-		sr.shape(new String[] { "   ", " b ", "www" })
-				.setIngredient('b', Material.BOOKSHELF)
-				.setIngredient('w', Material.WOOD);
-
 		ShapedRecipe glows1 = new ShapedRecipe(
 				new ItemStack(Material.GLOWSTONE));
 		glows1.shape(new String[] { "rr ", "rr ", "   " }).setIngredient('r',
@@ -334,8 +328,6 @@ public class Recipes {
 		plugin.getServer().addRecipe(sponge);
 
 		plugin.getServer().addRecipe(gravel);
-
-		plugin.getServer().addRecipe(sr);
 
 		plugin.getServer().addRecipe(ironingot1);
 		plugin.getServer().addRecipe(ironingot2);
