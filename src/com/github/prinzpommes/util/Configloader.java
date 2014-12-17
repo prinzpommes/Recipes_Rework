@@ -1,6 +1,6 @@
 package com.github.prinzpommes.util;
 
-import me.RecipePlugin;
+import com.github.prinzpommes.plugin.RecipePlugin;
 
 public class Configloader {
 	private RecipePlugin plugin;
@@ -13,6 +13,7 @@ public class Configloader {
 	private boolean blazerod;
 	private boolean netherstar;
 	private boolean netherwartseed;
+	private boolean quartz;
 
 	public Configloader(RecipePlugin plugin) {
 		this.plugin = plugin;
@@ -30,6 +31,7 @@ public class Configloader {
 		blazerod = this.plugin.getConfig().getBoolean("blazerod");
 		netherstar = this.plugin.getConfig().getBoolean("netherstar");
 		netherwartseed = this.plugin.getConfig().getBoolean("netherwartseed");
+		quartz = this.plugin.getConfig().getBoolean("quartz");
 
 	}
 
@@ -59,6 +61,9 @@ public class Configloader {
 
 	public boolean getnetherwartseed() {
 		return netherwartseed;
+	}
+	public boolean getquartz() {
+		return quartz;
 	}
 
 	public String getPrivatJoinMessage() {

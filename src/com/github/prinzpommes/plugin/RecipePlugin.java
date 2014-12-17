@@ -1,4 +1,4 @@
-package me;
+package com.github.prinzpommes.plugin;
 
 import java.io.File;
 import java.util.logging.Logger;
@@ -13,7 +13,7 @@ import com.github.prinzpommes.util.Recipes;
 public class RecipePlugin extends JavaPlugin {
 
 	private Logger log;
-	private final String mainDirectory = "plugins/Recipes/";
+	private final String mainDirectory = "plugins/Recipes-Rework/";
 	protected FileConfiguration config = null;
 	private static Configloader cfgl;
 

@@ -1,13 +1,13 @@
 package com.github.prinzpommes.util;
 
-import me.RecipePlugin;
-
 import org.bukkit.Material;
 import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.material.SpawnEgg;
+
+import com.github.prinzpommes.plugin.RecipePlugin;
 
 public class Recipes {
 	private RecipePlugin plugin;
@@ -90,6 +90,7 @@ public class Recipes {
 				.setIngredient('g', Material.GRASS)
 				.setIngredient('c', Material.COBBLESTONE);
 
+		@SuppressWarnings("deprecation")
 		ShapedRecipe villager = new ShapedRecipe(
 				new SpawnEgg((byte) 120).toItemStack(1));
 		villager.shape(new String[] { "rcr", "rer", "rlr" })
@@ -98,6 +99,7 @@ public class Recipes {
 				.setIngredient('l', Material.LEATHER)
 				.setIngredient('e', Material.EGG);
 
+		@SuppressWarnings("deprecation")
 		ShapedRecipe wolf = new ShapedRecipe(
 				new SpawnEgg((byte) 95).toItemStack(1));
 		wolf.shape(new String[] { "rbr", "rer", "rcr" })
@@ -106,6 +108,7 @@ public class Recipes {
 				.setIngredient('c', Material.ROTTEN_FLESH)
 				.setIngredient('e', Material.EGG);
 
+		@SuppressWarnings("deprecation")
 		ShapedRecipe schwein = new ShapedRecipe(
 				new SpawnEgg((byte) 90).toItemStack(1));
 		schwein.shape(new String[] { "rbr", "rer", "rcr" })
@@ -114,6 +117,7 @@ public class Recipes {
 				.setIngredient('c', Material.PORK)
 				.setIngredient('e', Material.EGG);
 
+		@SuppressWarnings("deprecation")
 		ShapedRecipe schaf = new ShapedRecipe(
 				new SpawnEgg((byte) 91).toItemStack(1));
 		schaf.shape(new String[] { "rbr", "rer", "rcr" })
@@ -122,6 +126,7 @@ public class Recipes {
 				.setIngredient('c', Material.WOOL)
 				.setIngredient('e', Material.EGG);
 
+		@SuppressWarnings("deprecation")
 		ShapedRecipe kuh = new ShapedRecipe(
 				new SpawnEgg((byte) 92).toItemStack(1));
 		kuh.shape(new String[] { "rbr", "rer", "rcr" })
@@ -130,6 +135,7 @@ public class Recipes {
 				.setIngredient('c', Material.RAW_BEEF)
 				.setIngredient('e', Material.EGG);
 
+		@SuppressWarnings("deprecation")
 		ShapedRecipe huhn = new ShapedRecipe(
 				new SpawnEgg((byte) 93).toItemStack(1));
 		huhn.shape(new String[] { "rbr", "rer", "rcr" })
@@ -218,7 +224,7 @@ public class Recipes {
 		ShapedRecipe blazerod = new ShapedRecipe(new ItemStack(
 				Material.BLAZE_ROD, 1));
 		blazerod.shape(new String[] { "ggg", "gbg", "ggg" })
-				.setIngredient('g', Material.GOLD_BLOCK)
+				.setIngredient('g', Material.GOLD_INGOT)
 				.setIngredient('b', Material.STICK);
 
 		ShapedRecipe netherstar = new ShapedRecipe(new ItemStack(
@@ -269,6 +275,24 @@ public class Recipes {
 		feder6.shape(new String[] { "   ", "  p", "  s" })
 				.setIngredient('p', Material.PAPER)
 				.setIngredient('s', Material.STRING);
+		
+		ShapedRecipe ender = new ShapedRecipe(new ItemStack(Material.ENDER_PEARL,
+				16));
+		ender.shape(new String[] { "lgl", "gdg", "lgl" })
+				.setIngredient('l', Material.LAPIS_BLOCK)
+				.setIngredient('g', Material.GLOWSTONE_DUST)
+				.setIngredient('d', Material.DIAMOND);
+		
+		ShapedRecipe slime = new ShapedRecipe(new ItemStack(Material.SLIME_BALL,
+				4));
+		slime.shape(new String[] { " g ", "gwg", " g " })
+				.setIngredient('w', Material.POTION)
+				.setIngredient('g', Material.GRASS);
+		
+		ShapelessRecipe flint = new ShapelessRecipe(new ItemStack(
+				Material.FLINT, 2, (byte) 1));
+		flint.addIngredient(Material.GRAVEL);
+		
 
 		FurnaceRecipe sponge = new FurnaceRecipe(new ItemStack(Material.SPONGE,
 				1), Material.SANDSTONE);
@@ -304,7 +328,9 @@ public class Recipes {
 				Material.RAW_BEEF, 1), Material.ROTTEN_FLESH);
 		FurnaceRecipe gravel = new FurnaceRecipe(new ItemStack(Material.GRAVEL,
 				1), Material.DIRT);
-
+		FurnaceRecipe quartz = new FurnaceRecipe(new ItemStack(Material.QUARTZ,
+				1), Material.GLASS);
+		
 		plugin.getServer().addRecipe(sponge);
 
 		plugin.getServer().addRecipe(gravel);
@@ -377,6 +403,13 @@ public class Recipes {
 		plugin.getServer().addRecipe(feder5);
 		plugin.getServer().addRecipe(feder6);
 
+		plugin.getServer().addRecipe(ender);
+		
+		plugin.getServer().addRecipe(slime);
+		
+		plugin.getServer().addRecipe(flint);
+		
+		
 		if (RecipePlugin.getConfigLoader().getnetherrack()) {
 			plugin.getServer().addRecipe(nrack);
 		}
@@ -414,5 +447,10 @@ public class Recipes {
 
 			plugin.getServer().addRecipe(netherstar);
 		}
+		if (RecipePlugin.getConfigLoader().getquartz()) {
+
+			plugin.getServer().addRecipe(quartz);
+		}
 	}
+
 }
