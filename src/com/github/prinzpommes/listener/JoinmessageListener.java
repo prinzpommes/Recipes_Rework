@@ -1,5 +1,7 @@
 package com.github.prinzpommes.listener;
 
+import java.util.Collection;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -19,30 +21,30 @@ public class JoinmessageListener implements Listener {
 	public void message(PlayerJoinEvent event) {
 		String privateJoinMessage = RecipePlugin.getConfigLoader()
 				.getPrivatJoinMessage();
-		privateJoinMessage = privateJoinMessage.replace("online%",
-				ChatColor.GRAY + "Online ("
-						+ Bukkit.getServer().getOnlinePlayers().length + "/"
-						+ Bukkit.getMaxPlayers() + "): " + listPlayers());
+//		privateJoinMessage = privateJoinMessage.replace("online%",
+//				ChatColor.GRAY + "Online ("
+//						+ Bukkit.getServer().getOnlinePlayers().size() + "/"
+//						+ Bukkit.getMaxPlayers() + "): " + listPlayers());
 
 		event.getPlayer().sendMessage(privateJoinMessage);
-	}
+//	}
 
-	public static String listPlayers() {
+//	public static String listPlayers() {
+//
+//		Collection<? extends Player> ar = Bukkit.getOnlinePlayers();
+//		String liste = "";
+//		for (Player p : Bukkit.getOnlinePlayers()) {
+//
+//			if (p.equals(ar[Bukkit.getOnlinePlayers().size() - 1])) {
+//
+//				liste += p.getDisplayName();
+//			} else {
+//
+//				liste += p.getDisplayName() + ", ";
+//			}
+//		}
 
-		Player ar[] = Bukkit.getOnlinePlayers();
-		String liste = "";
-		for (Player p : Bukkit.getOnlinePlayers()) {
-
-			if (p.equals(ar[Bukkit.getOnlinePlayers().length - 1])) {
-
-				liste += p.getDisplayName();
-			} else {
-
-				liste += p.getDisplayName() + ", ";
-			}
-		}
-
-		return liste;
+//		return liste;
 	}
 	
 }
